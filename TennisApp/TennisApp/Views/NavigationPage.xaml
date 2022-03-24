@@ -4,9 +4,8 @@
              x:Class="TennisApp.Views.NavigationPage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Button Text="toernooi"></Button>
+            <Button Text="Spelers"></Button>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
