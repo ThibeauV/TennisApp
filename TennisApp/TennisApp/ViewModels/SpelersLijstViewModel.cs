@@ -12,7 +12,7 @@ namespace TennisApp.ViewModels
         public SpelersLijstViewModel(INavigationService navigationService) 
             : base(navigationService)
         {
-            
+            Title = "Spelers";
         }
     }
 }

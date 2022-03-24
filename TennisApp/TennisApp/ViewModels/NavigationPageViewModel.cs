@@ -12,7 +12,7 @@ namespace TennisApp.ViewModels
         public NavigationPageViewModel(INavigationService navigationService)
             : base(navigationService)
         {
-            
+            Title = "NavigationEventArgs Page";
         }
     }
 }
