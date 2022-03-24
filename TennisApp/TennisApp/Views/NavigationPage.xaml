@@ -4,6 +4,9 @@
              x:Class="TennisApp.Views.NavigationPage">
     <ContentPage.Content>
         <StackLayout>
+            <Grid>
+                
+            </Grid>
             <Button WidthRequest="45" HeightRequest="45" HorizontalOptions="Center" Text="toernooi"></Button>
             <Button WidthRequest="45" HeightRequest="45" HorizontalOptions="Center" Text="Spelers"></Button>
         </StackLayout>
