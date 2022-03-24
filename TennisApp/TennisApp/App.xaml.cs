@@ -19,7 +19,7 @@ namespace TennisApp
         {
             InitializeComponent();
 
-            await NavigationService.NavigateAsync("NavigationPage/MainPage");
+            await NavigationService.NavigateAsync("NavigationPage/NavigationPage");
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
