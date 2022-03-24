@@ -4,10 +4,8 @@
              x:Class="TennisApp.Views.NavigationPage">
     <ContentPage.Content>
         <StackLayout>
-            <StackLayout Spacing="20" Padding="15">
-                <Button Margin="0,10,0,0" Text="toernooi"></Button>
-                <Button Margin="0,10,0,0" Text="Spelers"></Button>
-            </StackLayout>
+            <Button Text="toernooi"></Button>
+            <Button Text="Spelers"></Button>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
