@@ -4,7 +4,7 @@
              x:Class="TennisApp.Views.SpelersLijst">
     <ContentPage.Content>
         <StackLayout>
-            
+            <Label Text="SpelersLijst"></Label>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
