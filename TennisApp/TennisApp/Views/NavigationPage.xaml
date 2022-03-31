@@ -3,12 +3,13 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TennisApp.Views.NavigationPage">
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout Grid.Row="1" Grid.Column="2">
             <Grid>
-                
+                <Button WidthRequest="54" Text="Toernooi"></Button>
             </Grid>
-            <Button WidthRequest="45" HeightRequest="45" HorizontalOptions="Center" Text="toernooi"></Button>
-            <Button WidthRequest="45" HeightRequest="45" HorizontalOptions="Center" Text="Spelers"></Button>
+            <Grid>
+                <Button WidthRequest="54" Text="Spelers"></Button>
+            </Grid>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
