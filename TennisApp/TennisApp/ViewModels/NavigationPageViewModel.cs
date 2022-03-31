@@ -15,7 +15,7 @@ namespace TennisApp.ViewModels
         {
             Title = "NavigationEventArgs Page";
 
-            SpelersLijstPageCommand = new DelegateCommand(async () =>  );
+            SpelersLijstPageCommand = new DelegateCommand(async () => navigationService.NavigateAsync(new Uri("SpelersLijst.xaml", UriKind.Relative)));
         }
 
         public DelegateCommand SpelersLijstPageCommand { get; }
