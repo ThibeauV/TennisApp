@@ -1,4 +1,5 @@
-﻿using Prism.Navigation;
+﻿using Prism.Commands;
+using Prism.Navigation;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +14,10 @@ namespace TennisApp.ViewModels
             : base(navigationService)
         {
             Title = "NavigationEventArgs Page";
+
+            SpelersLijstPageCommand = new DelegateCommand();
         }
+
+        public DelegateCommand SpelersLijstPageCommand { get; }
     }
 }
