@@ -4,6 +4,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Windows.Input;
+using TennisApp.Views;
 using Xamarin.Forms;
 
 namespace TennisApp.ViewModels
@@ -15,9 +17,15 @@ namespace TennisApp.ViewModels
         {
             Title = "NavigationEventArgs Page";
 
-            SpelersLijstPageCommand = new DelegateCommand(async () => navigationService.NavigateAsync(new Uri("SpelersLijst.xaml", UriKind.Relative)));
+            SpelersLijstPageCommand = new DelegateCommand(ToSpelersLijst);
         }
 
-        public DelegateCommand SpelersLijstPageCommand { get; }
+        public ICommand SpelersLijstPageCommand { get; private set; }
+
+
+        private async void ToSpelersLijst()
+        {
+            await NavigationService.NavigateAsync(nameof(SpelersLijst), null, true, true);
+        }
     }
 }
