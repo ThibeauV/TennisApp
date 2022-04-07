@@ -18,14 +18,22 @@ namespace TennisApp.ViewModels
             Title = "NavigationEventArgs Page";
 
             SpelersLijstPageCommand = new DelegateCommand(ToSpelersLijst);
+            ToernooiPageCommand = new DelegateCommand(ToToernooiPage);
         }
 
         public ICommand SpelersLijstPageCommand { get; private set; }
+        public ICommand ToernooiPageCommand { get; private set; }
+
 
 
         private async void ToSpelersLijst()
         {
             await NavigationService.NavigateAsync(nameof(SpelersLijst), null, true, true);
+        }
+
+        private async void ToToernooiPage()
+        {
+            await NavigationService.NavigateAsync(nameof(ToernooiPage), null, true, true);
         }
     }
 }

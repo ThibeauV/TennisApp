@@ -5,10 +5,10 @@
     <ContentPage.Content>
         <StackLayout Grid.Row="1" Grid.Column="2">
             <Grid>
-                <Button WidthRequest="54" Text="Toernooi" BackgroundColor="LightGreen" Command="{Binding toernooiPageCommand}"></Button>
+                <Button WidthRequest="54" Text="Toernooi" BackgroundColor="LightGreen" Command="{Binding ToernooiPageCommand}"></Button>
             </Grid>
             <Grid>
-                <Button WidthRequest="54" Text="Spelers" Background="LightGreen" Command="{Binding SpelersLijstPageCommand}"></Button>
+                <Button WidthRequest="54" Text="Spelers" BackgroundColor="LightGreen" Command="{Binding SpelersLijstPageCommand}"></Button>
             </Grid>
         </StackLayout>
     </ContentPage.Content>
