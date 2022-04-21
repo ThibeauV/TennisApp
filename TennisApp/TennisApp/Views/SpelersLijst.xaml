@@ -5,6 +5,7 @@
     <ContentPage.Content>
         <StackLayout>
             <Label Text="SpelersLijst"></Label>
+            <Button WidthRequest="54" Text="Terug" BackgroundColor="LightGreen" Command="{Binding TerugPageCommand}"></Button>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
