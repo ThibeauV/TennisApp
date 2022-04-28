@@ -17,13 +17,22 @@ namespace TennisApp.ViewModels
             Title = "Spelers";
 
             TerugPageCommand = new DelegateCommand(ToNavPage);
+
+            AddPlayerCommand = new DelegateCommand(MakePlayer);
         }
 
         public ICommand TerugPageCommand { get; private set; }
 
+        public ICommand AddPlayerCommand { get; private set; }
+
         private async void ToNavPage()
         {
             await NavigationService.GoBackAsync();
+        }
+
+        private async void MakePlayer()
+        {
+
         }
     }
 }

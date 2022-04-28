@@ -5,7 +5,7 @@
              Title="{Binding Title}">
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Add Player" Command="{Binding AddPlayerCommand}" Order="Primary"/>
+        <ToolbarItem Text="Add Player" Command="{Binding AddPlayerCommand}" />
     </ContentPage.ToolbarItems>
 
     <ContentPage.Content>
