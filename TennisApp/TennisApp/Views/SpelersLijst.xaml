@@ -11,6 +11,7 @@
     <ContentPage.Content>
         <StackLayout>
             <Label Text="SpelersLijst"></Label>
+            <Button WidthRequest="54" Text="Add Player" BackgroundColor="LightGreen" Command="{Binding AddPlayerCommand}"/>
             <Button WidthRequest="54" Text="Terug" BackgroundColor="LightGreen" Command="{Binding TerugPageCommand}"/>
         </StackLayout>
     </ContentPage.Content>
