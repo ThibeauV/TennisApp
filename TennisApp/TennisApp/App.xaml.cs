@@ -32,6 +32,7 @@ namespace TennisApp
             containerRegistry.RegisterForNavigation<SpelersLijst, SpelersLijstViewModel>();
             containerRegistry.RegisterForNavigation<ToernooiPage, ToernooiPageViewModel>();
             containerRegistry.RegisterForNavigation<NavPage, NavPageViewModel>();
+            containerRegistry.RegisterForNavigation<NewPlayerPage, NewPlayerPageViewModel>();
         }
     }
 }
