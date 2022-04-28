@@ -1,7 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="TennisApp.Views.NavigationPage">
+             xmlns:prism="http://prismlibrary.com"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="TennisApp.Views.NavPage">
+
     <ContentPage.Content>
         <StackLayout Grid.Row="1" Grid.Column="2">
             <Grid>
@@ -12,4 +15,5 @@
             </Grid>
         </StackLayout>
     </ContentPage.Content>
+
 </ContentPage>

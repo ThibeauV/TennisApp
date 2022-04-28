@@ -13,6 +13,7 @@ namespace TennisApp
         public App(IPlatformInitializer initializer)
             : base(initializer)
         {
+
         }
 
         protected override async void OnInitialized()
@@ -26,10 +27,11 @@ namespace TennisApp
         {
             containerRegistry.RegisterSingleton<IAppInfo, AppInfoImplementation>();
 
-            containerRegistry.RegisterForNavigation<Views.NavigationPage>();
+            containerRegistry.RegisterForNavigation<Xamarin.Forms.NavigationPage>();
             containerRegistry.RegisterForNavigation<MainPage, MainPageViewModel>();
             containerRegistry.RegisterForNavigation<SpelersLijst, SpelersLijstViewModel>();
             containerRegistry.RegisterForNavigation<ToernooiPage, ToernooiPageViewModel>();
+            containerRegistry.RegisterForNavigation<NavPage, NavPageViewModel>();
         }
     }
 }

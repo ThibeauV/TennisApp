@@ -1,11 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="TennisApp.Views.SpelersLijst">
+             x:Class="TennisApp.Views.SpelersLijst"
+             Title="{Binding Title}">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add Player" Command="{Binding AddPlayerCommand}" Order="Primary"/>
+    </ContentPage.ToolbarItems>
+
     <ContentPage.Content>
         <StackLayout>
             <Label Text="SpelersLijst"></Label>
-            <Button WidthRequest="54" Text="Terug" BackgroundColor="LightGreen" Command="{Binding TerugPageCommand}"></Button>
+            <Button WidthRequest="54" Text="Terug" BackgroundColor="LightGreen" Command="{Binding TerugPageCommand}"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

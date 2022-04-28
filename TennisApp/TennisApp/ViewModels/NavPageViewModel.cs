@@ -1,21 +1,20 @@
 ﻿using Prism.Commands;
+using Prism.Mvvm;
 using Prism.Navigation;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Windows.Input;
 using TennisApp.Views;
-using Xamarin.Forms;
 
 namespace TennisApp.ViewModels
 {
-    public class NavigationPageViewModel : ViewModelBase
+    public class NavPageViewModel : ViewModelBase
     {
-        public NavigationPageViewModel(INavigationService navigationService)
+        public NavPageViewModel(INavigationService navigationService)
             : base(navigationService)
         {
-            Title = "NavigationEventArgs Page";
+            Title = "Navigation Page";
 
             SpelersLijstPageCommand = new DelegateCommand(ToSpelersLijst);
             ToernooiPageCommand = new DelegateCommand(ToToernooiPage);
@@ -23,8 +22,6 @@ namespace TennisApp.ViewModels
 
         public ICommand SpelersLijstPageCommand { get; private set; }
         public ICommand ToernooiPageCommand { get; private set; }
-
-
 
         private async void ToSpelersLijst()
         {
