@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Windows.Input;
+using TennisApp.Views;
 using Xamarin.Forms;
 
 namespace TennisApp.ViewModels
@@ -32,7 +33,7 @@ namespace TennisApp.ViewModels
 
         private async void MakePlayer()
         {
-
+            await NavigationService.NavigateAsync(nameof(NewPlayerPage), null, true, true);
         }
     }
 }
