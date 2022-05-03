@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Windows.Input;
+using TennisApp.Models;
+using TennisApp.Repositories;
 using TennisApp.Views;
 using Xamarin.Forms;
 
@@ -12,7 +14,9 @@ namespace TennisApp.ViewModels
 {
     public class SpelersLijstViewModel : ViewModelBase
     {
-        public SpelersLijstViewModel(INavigationService navigationService) 
+        private IDataRepositories<Players> dataRepositories;
+
+        public SpelersLijstViewModel(INavigationService navigationService, IDataRepositories<Players> dataRepositories) 
             : base(navigationService)
         {
             Title = "Spelers";
@@ -20,6 +24,8 @@ namespace TennisApp.ViewModels
             TerugPageCommand = new DelegateCommand(ToNavPage);
 
             AddPlayerCommand = new DelegateCommand(MakePlayer);
+
+            this.dataRepositories = dataRepositories;
         }
 
         public ICommand TerugPageCommand { get; private set; }
@@ -34,6 +40,27 @@ namespace TennisApp.ViewModels
         private async void MakePlayer()
         {
             await NavigationService.NavigateAsync(nameof(NewPlayerPage), null, true, true);
+        }
+
+        private async void ShowPlayer()
+        {
+            try
+            {
+                var players = await dataRepositories.GetPlayersAsync();
+
+                foreach (var player in players)
+                {
+                    Players.add(player);
+                }
+            }
+            catch
+            {
+
+            }
+            finally
+            {
+
+            }
         }
     }
 }
