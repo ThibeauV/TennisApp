@@ -1,5 +1,7 @@
 using Prism;
 using Prism.Ioc;
+using TennisApp.Models;
+using TennisApp.Repositories;
 using TennisApp.ViewModels;
 using TennisApp.Views;
 using Xamarin.Essentials.Implementation;
@@ -33,6 +35,7 @@ namespace TennisApp
             containerRegistry.RegisterForNavigation<ToernooiPage, ToernooiPageViewModel>();
             containerRegistry.RegisterForNavigation<NavPage, NavPageViewModel>();
             containerRegistry.RegisterForNavigation<NewPlayerPage, NewPlayerPageViewModel>();
+            containerRegistry.Register<IDataRepositories<Players>, FirebaseRepositories>();
         }
     }
 }

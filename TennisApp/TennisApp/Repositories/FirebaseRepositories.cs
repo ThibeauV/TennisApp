@@ -37,8 +37,9 @@ namespace TennisApp.Repositories
 
                 return players;
             }
-            catch
+            catch (Exception x)
             {
+                Debug.WriteLine(x);
                 return null;
             }
         }

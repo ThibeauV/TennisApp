@@ -2,6 +2,8 @@
 using Prism.Navigation;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Windows.Input;
@@ -19,13 +21,27 @@ namespace TennisApp.ViewModels
         public SpelersLijstViewModel(INavigationService navigationService, IDataRepositories<Players> dataRepositories) 
             : base(navigationService)
         {
+            this.dataRepositories = dataRepositories;
+
             Title = "Spelers";
 
             TerugPageCommand = new DelegateCommand(ToNavPage);
 
             AddPlayerCommand = new DelegateCommand(MakePlayer);
 
-            this.dataRepositories = dataRepositories;
+            Player = new ObservableCollection<Players>();
+
+            ShowPlayer();
+        }
+
+        public ObservableCollection<Players> Player { get; private set; }
+
+        private bool isBusy;
+
+        public bool IsBusy
+        {
+            get { return isBusy; }
+            set { SetProperty(ref isBusy, value); }
         }
 
         public ICommand TerugPageCommand { get; private set; }
@@ -50,16 +66,16 @@ namespace TennisApp.ViewModels
 
                 foreach (var player in players)
                 {
-                    Players.add(player);
+                    Player.Add(player);
                 }
             }
-            catch
+            catch (Exception x)
             {
-
+                Debug.WriteLine(x);
             }
             finally
             {
-
+                IsBusy = false;
             }
         }
     }
