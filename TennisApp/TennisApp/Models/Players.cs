@@ -6,9 +6,9 @@ namespace TennisApp.Models
 {
     public class Players
     {
-        private int playerId;
+        private string playerId;
 
-        public int PlayerId
+        public string PlayerId
         {
             get { return playerId; }
             set { playerId = value; }
@@ -29,5 +29,14 @@ namespace TennisApp.Models
             get { return lastname; }
             set { lastname = value; }
         }
+
+        private int age;
+
+        public int Age
+        {
+            get { return age; }
+            set { age = value; }
+        }
+
     }
 }
