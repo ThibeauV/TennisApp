@@ -10,7 +10,7 @@ using TennisApp.Models;
 
 namespace TennisApp.Repositories
 {
-    public class FirebaseRepositories : IDataRepositories<Players>
+    public class FirebaseRepositories : IDataRepositories<Player>
     {
         private const string BaseURL = "https://tennisapp-63974-default-rtdb.europe-west1.firebasedatabase.app/";
         private readonly ChildQuery _query;
@@ -21,13 +21,13 @@ namespace TennisApp.Repositories
             _query = new FirebaseClient(BaseURL).Child(pathPlayer);
         }
 
-        public async Task<IEnumerable<Players>> GetPlayersAsync()
+        public async Task<IEnumerable<Player>> GetPlayersAsync()
         {
             try
             {
-                var firebaseObjects = await _query.OnceAsync<Players>();
+                var firebaseObjects = await _query.OnceAsync<Player>();
 
-                IEnumerable<Players> players = firebaseObjects.Select(x => new Players
+                IEnumerable<Player> players = firebaseObjects.Select(x => new Player
                 {
                     PlayerId = x.Key,
                     Firstname = x.Object.Firstname,

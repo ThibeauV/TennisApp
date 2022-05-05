@@ -35,7 +35,7 @@ namespace TennisApp
             containerRegistry.RegisterForNavigation<ToernooiPage, ToernooiPageViewModel>();
             containerRegistry.RegisterForNavigation<NavPage, NavPageViewModel>();
             containerRegistry.RegisterForNavigation<NewPlayerPage, NewPlayerPageViewModel>();
-            containerRegistry.Register<IDataRepositories<Players>, FirebaseRepositories>();
+            containerRegistry.Register<IDataRepositories<Player>, FirebaseRepositories>();
         }
     }
 }

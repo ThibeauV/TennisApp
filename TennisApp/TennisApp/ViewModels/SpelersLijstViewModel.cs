@@ -16,9 +16,9 @@ namespace TennisApp.ViewModels
 {
     public class SpelersLijstViewModel : ViewModelBase
     {
-        private IDataRepositories<Players> dataRepositories;
+        private IDataRepositories<Player> dataRepositories;
 
-        public SpelersLijstViewModel(INavigationService navigationService, IDataRepositories<Players> dataRepositories) 
+        public SpelersLijstViewModel(INavigationService navigationService, IDataRepositories<Player> dataRepositories) 
             : base(navigationService)
         {
             this.dataRepositories = dataRepositories;
@@ -29,12 +29,12 @@ namespace TennisApp.ViewModels
 
             AddPlayerCommand = new DelegateCommand(MakePlayer);
 
-            Player = new ObservableCollection<Players>();
+            Players = new ObservableCollection<Player>();
 
             ShowPlayer();
         }
 
-        public ObservableCollection<Players> Player { get; private set; }
+        public ObservableCollection<Player> Players { get; private set; }
 
         private bool isBusy;
 
@@ -66,7 +66,7 @@ namespace TennisApp.ViewModels
 
                 foreach (var player in players)
                 {
-                    Player.Add(player);
+                    Players.Add(player);
                 }
             }
             catch (Exception x)

@@ -11,7 +11,7 @@
 
     <ContentPage.Content>
         <StackLayout Padding="20">
-            <CollectionView ItemsSource="{Binding Player}">
+            <CollectionView ItemsSource="{Binding Players}">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <StackLayout>

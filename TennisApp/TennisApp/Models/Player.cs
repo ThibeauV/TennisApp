@@ -4,7 +4,7 @@ using System.Text;
 
 namespace TennisApp.Models
 {
-    public class Players
+    public class Player
     {
         private string playerId;
 
