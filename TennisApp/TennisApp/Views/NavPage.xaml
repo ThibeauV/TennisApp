@@ -6,7 +6,7 @@
              x:Class="TennisApp.Views.NavPage">
 
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout Padding="20">
             <Button WidthRequest="54" Text="Toernooi" BackgroundColor="LightGreen" Command="{Binding ToernooiPageCommand}"/>
             <Button WidthRequest="54" Text="Spelers" BackgroundColor="LightGreen" Command="{Binding SpelersLijstPageCommand}"/>
         </StackLayout>
