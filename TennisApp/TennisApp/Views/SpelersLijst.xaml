@@ -6,11 +6,11 @@
 
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Add Player" Command="{Binding AddPlayerCommand}" />
+        <ToolbarItem Text="SpelersLijst"/>
     </ContentPage.ToolbarItems>
 
     <ContentPage.Content>
         <StackLayout Padding="20">
-            <Label Text="SpelersLijst"></Label>
             <CollectionView ItemsSource="{Binding Player}">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
