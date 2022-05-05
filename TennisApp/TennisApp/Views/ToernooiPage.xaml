@@ -12,7 +12,8 @@
     
     <ContentPage.Content>
         <StackLayout>
-            <Frame>
+            <Frame BorderColor="LightGreen"
+                   CornerRadius="5">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
@@ -36,7 +37,8 @@
             <CollectionView>
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
-                        <Frame>
+                        <Frame BorderColor="LightGreen"
+                               CornerRadius="5">
                             <Grid>
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="Auto"/>
