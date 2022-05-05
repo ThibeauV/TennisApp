@@ -3,12 +3,13 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="http://prismlibrary.com"
              prism:ViewModelLocator.AutowireViewModel="True"
-             x:Class="TennisApp.Views.NavPage">
+             x:Class="TennisApp.Views.NavPage"
+             Title="{Binding Title}">
 
     <ContentPage.Content>
-        <StackLayout Padding="20">
-            <Button WidthRequest="54" Text="Toernooi" BackgroundColor="LightGreen" Command="{Binding ToernooiPageCommand}"/>
-            <Button WidthRequest="54" Text="Spelers" BackgroundColor="LightGreen" Command="{Binding SpelersLijstPageCommand}"/>
+        <StackLayout Padding="20" BackgroundColor="Orange">
+            <Button WidthRequest="54" Text="Toernooi" BackgroundColor="Orange" BorderColor="White" TextColor="White" BorderWidth="2" Command="{Binding ToernooiPageCommand}"/>
+            <Button WidthRequest="54" Text="Spelers" BackgroundColor="Orange" BorderColor="White" TextColor="White" BorderWidth="2" Command="{Binding SpelersLijstPageCommand}"/>
         </StackLayout>
     </ContentPage.Content>
 
