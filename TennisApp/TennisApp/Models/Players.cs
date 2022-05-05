@@ -37,6 +37,5 @@ namespace TennisApp.Models
             get { return age; }
             set { age = value; }
         }
-
     }
 }
