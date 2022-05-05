@@ -6,11 +6,45 @@
              x:Class="TennisApp.Views.ToernooiPage"
              Title="{Binding Title}">
 
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Toernooipage"/>
+    </ContentPage.ToolbarItems>
+    
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Toernooipage"></Label>
-
-            <Button WidthRequest="54" Text="Terug" BackgroundColor="LightGreen" Command="{Binding TerugPageCommand}"></Button>
+            <CollectionView>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Text="Naam Toernooi"/>
+                                <Label Text="Datum Toernooi"/>
+                                <StackLayout Orientation="Horizontal">
+                                    <StackLayout Orientation="Vertical">
+                                        <Label Text="Naam speler 1"/>
+                                        <Label Text="Punten speler 1"/>
+                                    </StackLayout>
+                                    <StackLayout Orientation="Vertical">
+                                        <Label Text="Naam speler 2"/>
+                                        <Label Text="Punten speler 2"/>
+                                    </StackLayout>
+                                </StackLayout>
+                            </Grid>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            <Button WidthRequest="54" Text="Terug" BackgroundColor="LightGreen" Command="{Binding TerugPageCommand}"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
