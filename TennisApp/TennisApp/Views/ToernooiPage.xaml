@@ -12,33 +12,49 @@
     
     <ContentPage.Content>
         <StackLayout>
+            <Frame>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Text="Naam Toernooi" Grid.Row="1" Grid.Column="1"/>
+                    <Label Text="Datum Toernooi" Grid.Row="2" Grid.Column="1"/>
+                    <Label Text="Naam speler 1" Grid.Row="3" Grid.Column="1"/>
+                    <Label Text="Punten speler 1" Grid.Row="4" Grid.Column="1"/>
+                    <Label Text="Naam speler 2" Grid.Row="3" Grid.Column="2"/>
+                    <Label Text="Punten speler 2" Grid.Row="4" Grid.Column="2"/>
+                </Grid>
+            </Frame>
             <CollectionView>
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <Frame>
                             <Grid>
                                 <Grid.RowDefinitions>
-                                    <RowDefinition Height="*"/>
-                                    <RowDefinition Height="*"/>
-                                    <RowDefinition Height="*"/>
-                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
                                 </Grid.RowDefinitions>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="Auto"/>
                                     <ColumnDefinition Width="Auto"/>
                                 </Grid.ColumnDefinitions>
-                                <Label Text="Naam Toernooi"/>
-                                <Label Text="Datum Toernooi"/>
-                                <StackLayout Orientation="Horizontal">
-                                    <StackLayout Orientation="Vertical">
-                                        <Label Text="Naam speler 1"/>
-                                        <Label Text="Punten speler 1"/>
-                                    </StackLayout>
-                                    <StackLayout Orientation="Vertical">
-                                        <Label Text="Naam speler 2"/>
-                                        <Label Text="Punten speler 2"/>
-                                    </StackLayout>
-                                </StackLayout>
+                                <Label Text="{Binding NaamToernooi}" Grid.Row="1" Grid.Column="1"/>
+                                <Label Text="{Binding DatumToernooi}" Grid.Row="2" Grid.Column="1"/>
+                                <Label Text="{Binding NaamSpeler1}" Grid.Row="3" Grid.Column="1"/>
+                                <Label Text="{Binding PuntenSpeler1}" Grid.Row="4" Grid.Column="1"/>
+                                <Label Text="{Binding NaamSpeler2}" Grid.Row="3" Grid.Column="2"/>
+                                <Label Text="{Binding PuntenSpeler2}" Grid.Row="4" Grid.Column="2"/>
                             </Grid>
                         </Frame>
                     </DataTemplate>
