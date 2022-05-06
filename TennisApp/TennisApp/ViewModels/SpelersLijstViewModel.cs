@@ -1,4 +1,5 @@
-﻿using Prism.Commands;
+﻿using Prism.AppModel;
+using Prism.Commands;
 using Prism.Navigation;
 using System;
 using System.Collections.Generic;
@@ -14,7 +15,7 @@ using Xamarin.Forms;
 
 namespace TennisApp.ViewModels
 {
-    public class SpelersLijstViewModel : ViewModelBase
+    public class SpelersLijstViewModel : ViewModelBase, IPageLifecycleAware
     {
         private IDataRepositories<Player> dataRepositories;
 
@@ -31,7 +32,7 @@ namespace TennisApp.ViewModels
 
             Players = new ObservableCollection<Player>();
 
-            ShowPlayer();
+            ReloadPlayersCommand = new DelegateCommand(ReloadPlayers);
         }
 
         public ObservableCollection<Player> Players { get; private set; }
@@ -47,6 +48,8 @@ namespace TennisApp.ViewModels
         public ICommand TerugPageCommand { get; private set; }
 
         public ICommand AddPlayerCommand { get; private set; }
+        
+        public ICommand ReloadPlayersCommand { get; private set; }
 
         private async void ToNavPage()
         {
@@ -62,6 +65,8 @@ namespace TennisApp.ViewModels
         {
             try
             {
+                Players.Clear();
+
                 var players = await dataRepositories.GetPlayersAsync();
 
                 foreach (var player in players)
@@ -77,6 +82,21 @@ namespace TennisApp.ViewModels
             {
                 IsBusy = false;
             }
+        }
+
+        public void OnAppearing()
+        {
+            ShowPlayer();
+        }
+
+        public void OnDisappearing()
+        {
+            
+        }
+
+        public void ReloadPlayers()
+        {
+            ShowPlayer();
         }
     }
 }
