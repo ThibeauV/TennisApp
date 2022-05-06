@@ -23,12 +23,12 @@ namespace TennisApp.ViewModels
 
         public void OnAppearing()
         {
-            throw new NotImplementedException();
+
         }
 
         public void OnDisappearing()
         {
-            throw new NotImplementedException();
+
         }
 
         private async void ToNavPage()
