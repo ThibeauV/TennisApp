@@ -29,7 +29,7 @@ namespace TennisApp.Repositories
 
                 IEnumerable<Player> players = firebaseObjects.Select(x => new Player
                 {
-                    PlayerId = x.Key,
+                    PlayerId = x.Object.PlayerId,
                     Firstname = x.Object.Firstname,
                     Lastname = x.Object.Lastname,
                     Age = x.Object.Age
