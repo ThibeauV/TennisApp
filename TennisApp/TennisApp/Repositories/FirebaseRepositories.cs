@@ -21,6 +21,20 @@ namespace TennisApp.Repositories
             _query = new FirebaseClient(BaseURL).Child(pathPlayer);
         }
 
+        public async Task<bool> AddPlayersAsync(Player player)
+        {
+            try
+            {
+                var AddPlayer = await _query.PostAsync(player);
+            }
+            catch
+            {
+                return false;
+            }
+
+            return true;
+        }
+
         public async Task<IEnumerable<Player>> GetPlayersAsync()
         {
             try
