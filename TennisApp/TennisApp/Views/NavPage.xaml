@@ -8,8 +8,10 @@
 
     <ContentPage.Content>
         <StackLayout Padding="20" BackgroundColor="White">
-            <Button WidthRequest="54" Text="Toernooi" BackgroundColor="lightGreen" BorderColor="LightGreen" TextColor="Black" BorderWidth="2" Command="{Binding ToernooiPageCommand}"/>
-            <Button WidthRequest="54" Text="Spelers" BackgroundColor="LightGreen" BorderColor="LightGreen" TextColor="Black" BorderWidth="2" Command="{Binding SpelersLijstPageCommand}"/>
+            <StackLayout VerticalOptions="CenterAndExpand" WidthRequest="50">
+                <Button WidthRequest="54" Text="Toernooi" BackgroundColor="lightGreen" BorderColor="LightGreen" TextColor="Black" BorderWidth="2" Command="{Binding ToernooiPageCommand}"/>
+                <Button WidthRequest="54" Text="Spelers" BackgroundColor="LightGreen" BorderColor="LightGreen" TextColor="Black" BorderWidth="2" Command="{Binding SpelersLijstPageCommand}"/>
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 
