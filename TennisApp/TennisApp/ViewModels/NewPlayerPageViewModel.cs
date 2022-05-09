@@ -64,7 +64,6 @@ namespace TennisApp.ViewModels
         {
             await NavigationService.GoBackAsync();
         }
-
         private async void OnSave()
         {
             try
