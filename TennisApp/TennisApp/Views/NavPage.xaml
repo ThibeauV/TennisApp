@@ -7,9 +7,9 @@
              Title="{Binding Title}">
 
     <ContentPage.Content>
-        <StackLayout Padding="20" BackgroundColor="Orange">
-            <Button WidthRequest="54" Text="Toernooi" BackgroundColor="Orange" BorderColor="White" TextColor="White" BorderWidth="2" Command="{Binding ToernooiPageCommand}"/>
-            <Button WidthRequest="54" Text="Spelers" BackgroundColor="Orange" BorderColor="White" TextColor="White" BorderWidth="2" Command="{Binding SpelersLijstPageCommand}"/>
+        <StackLayout Padding="20" BackgroundColor="White">
+            <Button WidthRequest="54" Text="Toernooi" BackgroundColor="lightGreen" BorderColor="LightGreen" TextColor="Black" BorderWidth="2" Command="{Binding ToernooiPageCommand}"/>
+            <Button WidthRequest="54" Text="Spelers" BackgroundColor="LightGreen" BorderColor="LightGreen" TextColor="Black" BorderWidth="2" Command="{Binding SpelersLijstPageCommand}"/>
         </StackLayout>
     </ContentPage.Content>
 

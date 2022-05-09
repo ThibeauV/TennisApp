@@ -11,8 +11,8 @@
     </ContentPage.ToolbarItems>
     
     <ContentPage.Content>
-        <StackLayout Padding="20" BackgroundColor="LightGreen">
-            <Frame BorderColor="Black"
+        <StackLayout Padding="20" BackgroundColor="White">
+            <Frame BorderColor="LightGreen" BackgroundColor="LightGreen"
                    CornerRadius="5">
                 <Grid>
                     <Grid.RowDefinitions>
@@ -64,7 +64,7 @@
                     </CollectionView.ItemTemplate>
                 </CollectionView>
             </RefreshView>
-            <Button WidthRequest="54" Text="Terug" BackgroundColor="White" Command="{Binding TerugPageCommand}"/>
+            <Button WidthRequest="54" Text="Terug" BackgroundColor="LightGreen" Command="{Binding TerugPageCommand}"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
