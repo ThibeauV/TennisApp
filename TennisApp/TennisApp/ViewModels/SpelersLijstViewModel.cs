@@ -30,6 +30,8 @@ namespace TennisApp.ViewModels
 
             AddPlayerCommand = new DelegateCommand(MakePlayer);
 
+            UpdatePlayerCommand = new DelegateCommand(UpdatePlayer);
+
             Players = new ObservableCollection<Player>();
 
             ReloadPlayersCommand = new DelegateCommand(ReloadPlayers);
@@ -48,7 +50,10 @@ namespace TennisApp.ViewModels
         public ICommand TerugPageCommand { get; private set; }
 
         public ICommand AddPlayerCommand { get; private set; }
-        
+
+        public ICommand UpdatePlayerCommand { get; private set; }
+
+
         public ICommand ReloadPlayersCommand { get; private set; }
 
         private async void ToNavPage()
@@ -82,6 +87,11 @@ namespace TennisApp.ViewModels
             {
                 IsBusy = false;
             }
+        }
+
+        private async void UpdatePlayer()
+        {
+
         }
 
         public void OnAppearing()
