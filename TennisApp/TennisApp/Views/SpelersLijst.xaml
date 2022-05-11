@@ -26,8 +26,17 @@
                     </CollectionView.ItemTemplate>
                 </CollectionView>
             </RefreshView>
-            <Button WidthRequest="54" Text="Add Player" BackgroundColor="LightGreen" Command="{Binding AddPlayerCommand}"/>
-            <Button WidthRequest="54" Text="Terug" BackgroundColor="LightGreen" Command="{Binding TerugPageCommand}"/>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                </Grid.ColumnDefinitions>
+                <Button WidthRequest="54" Text="Add Player" Grid.Row="1" Grid.Column="1" BackgroundColor="LightGreen" Command="{Binding AddPlayerCommand}"/>
+                <Button WidthRequest="54" Text="Update Player" Grid.Row="1" Grid.Column="2" BackgroundColor="LightGreen" Command="{Binding UpdatePlayerCommand}"/>
+                <Button WidthRequest="54" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Text="Terug" BackgroundColor="LightGreen" Command="{Binding TerugPageCommand}"/>
+            </Grid>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
