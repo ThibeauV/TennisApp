@@ -53,7 +53,6 @@ namespace TennisApp.ViewModels
 
         public ICommand UpdatePlayerCommand { get; private set; }
 
-
         public ICommand ReloadPlayersCommand { get; private set; }
 
         private async void ToNavPage()
@@ -91,7 +90,7 @@ namespace TennisApp.ViewModels
 
         private async void UpdatePlayer()
         {
-
+            await NavigationService.NavigateAsync(nameof(UpdatePlayerPage), null, true, true);
         }
 
         public void OnAppearing()

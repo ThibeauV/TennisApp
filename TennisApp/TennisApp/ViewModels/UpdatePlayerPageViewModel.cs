@@ -16,6 +16,8 @@ namespace TennisApp.ViewModels
             Title = "Update Player";
 
             UpdateCommand = new DelegateCommand(UpdatePlayer);
+
+            CancelCommand = new DelegateCommand(CancelPlayer);
         }
 
         private string name;
@@ -43,6 +45,7 @@ namespace TennisApp.ViewModels
         }
 
         public ICommand UpdateCommand { get; private set; }
+        public ICommand CancelCommand { get; private set; }
 
         private async void UpdatePlayer()
         {
@@ -60,6 +63,11 @@ namespace TennisApp.ViewModels
             {
 
             }
+        }
+
+        private async void CancelPlayer()
+        {
+            await NavigationService.GoBackAsync();
         }
     }
 }

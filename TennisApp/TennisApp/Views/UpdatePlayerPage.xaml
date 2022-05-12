@@ -13,7 +13,7 @@
         <Label Text="Age" FontSize="Medium"></Label>
         <Entry Text="{Binding Age, Mode=TwoWay}"></Entry>
         <StackLayout Orientation="Horizontal">
-            <Button WidthRequest="54" Text="Update" BackgroundColor="LightGreen" Command="{Binding UpdateCommand}"/>
+            <Button WidthRequest="108" Text="Update" BackgroundColor="LightGreen" Command="{Binding UpdateCommand}"/>
             <Button WidthRequest="108" Text="Cancel" BackgroundColor="LightGreen" Command="{Binding CancelCommand}"/>
         </StackLayout>
     </StackLayout>
