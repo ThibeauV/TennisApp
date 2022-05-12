@@ -113,7 +113,7 @@ namespace TennisApp.ViewModels
             }
         }
 
-        private async void UpdatePlayer()
+        private void UpdatePlayer()
         {
             OnPlayerSelectedAsync(selectedPlayer);
         }
