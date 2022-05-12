@@ -65,11 +65,10 @@ namespace TennisApp.ViewModels
             set
             {
                 SetProperty(ref selectedPlayer, value);
-                OnItemSelectedAsync(selectedPlayer);
             }
         }
 
-        private async Task OnItemSelectedAsync(Player player)
+        private async void OnPlayerSelectedAsync(Player player)
         {
             if (player == null)
             {
@@ -78,6 +77,7 @@ namespace TennisApp.ViewModels
 
             var p = new NavigationParameters();
             p.Add("player", player);
+            await NavigationService.NavigateAsync(nameof(UpdatePlayerPage), p);
         }
 
         private async void ToNavPage()
@@ -115,9 +115,7 @@ namespace TennisApp.ViewModels
 
         private async void UpdatePlayer()
         {
-            var p = new NavigationParameters();
-            p.Add("player", player);
-            await NavigationService.NavigateAsync(nameof(UpdatePlayer), p);
+            OnPlayerSelectedAsync(selectedPlayer);
         }
 
         public void OnAppearing()
