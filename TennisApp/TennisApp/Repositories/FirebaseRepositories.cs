@@ -57,5 +57,10 @@ namespace TennisApp.Repositories
                 return null;
             }
         }
+
+        public Task<bool> UpdateItemAsync(Player player)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

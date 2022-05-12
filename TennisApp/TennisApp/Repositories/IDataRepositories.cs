@@ -11,5 +11,7 @@ namespace TennisApp.Repositories
         Task<IEnumerable<T>> GetPlayersAsync();
 
         Task<bool> AddPlayersAsync(Player player);
+
+        Task<bool> UpdateItemAsync(Player player);
     }
 }
