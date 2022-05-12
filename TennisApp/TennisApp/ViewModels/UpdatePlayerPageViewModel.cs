@@ -18,11 +18,48 @@ namespace TennisApp.ViewModels
             UpdateCommand = new DelegateCommand(UpdatePlayer);
         }
 
+        private string name;
+
+        public string Name
+        {
+            get { return name; }
+            set { SetProperty(ref name, value); }
+        }
+
+        private string familiename;
+
+        public string Familiename
+        {
+            get { return familiename; }
+            set { SetProperty(ref familiename, value); }
+        }
+
+        private int age;
+
+        public int Age
+        {
+            get { return age; }
+            set { SetProperty(ref age, value); }
+        }
+
         public ICommand UpdateCommand { get; private set; }
 
         private async void UpdatePlayer()
         {
+            OnSave();
+            await NavigationService.GoBackAsync();
+        }
 
+        private async void OnSave()
+        {
+            try
+            {
+                
+            }
+            catch
+            {
+
+            }
         }
     }
 }
