@@ -58,9 +58,21 @@ namespace TennisApp.Repositories
             }
         }
 
-        public Task<bool> UpdateItemAsync(Player player)
+        public async Task<bool> UpdateItemAsync(Player player)
         {
-            throw new NotImplementedException();
+            try
+            {
+                Player copy = new Player() { Age = player.Age, Firstname = player.Firstname, Lastname = player.Lastname, PlayerId = player.PlayerId };
+                await _query
+                    .Child(player.Firstname)
+                    .PutAsync(copy);
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+
+            return true;
         }
     }
 }
