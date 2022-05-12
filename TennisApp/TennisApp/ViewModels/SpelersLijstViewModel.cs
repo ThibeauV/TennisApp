@@ -7,6 +7,7 @@ using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using TennisApp.Models;
 using TennisApp.Repositories;
@@ -18,6 +19,8 @@ namespace TennisApp.ViewModels
     public class SpelersLijstViewModel : ViewModelBase, IPageLifecycleAware
     {
         private IDataRepositories<Player> dataRepositories;
+
+        private Player player;
 
         public SpelersLijstViewModel(INavigationService navigationService, IDataRepositories<Player> dataRepositories) 
             : base(navigationService)
@@ -55,6 +58,28 @@ namespace TennisApp.ViewModels
 
         public ICommand ReloadPlayersCommand { get; private set; }
 
+        private Player selectedPlayer;
+        public Player SelectedPlayer
+        {
+            get { return selectedPlayer; }
+            set
+            {
+                SetProperty(ref selectedPlayer, value);
+                OnItemSelectedAsync(selectedPlayer);
+            }
+        }
+
+        private async Task OnItemSelectedAsync(Player player)
+        {
+            if (player == null)
+            {
+                return;
+            }
+
+            var p = new NavigationParameters();
+            p.Add("player", player);
+        }
+
         private async void ToNavPage()
         {
             await NavigationService.GoBackAsync();
@@ -90,7 +115,9 @@ namespace TennisApp.ViewModels
 
         private async void UpdatePlayer()
         {
-            await NavigationService.NavigateAsync(nameof(UpdatePlayerPage), null, true, true);
+            var p = new NavigationParameters();
+            p.Add("player", player);
+            await NavigationService.NavigateAsync(nameof(UpdatePlayer), p);
         }
 
         public void OnAppearing()
