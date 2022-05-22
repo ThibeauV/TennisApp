@@ -73,7 +73,6 @@ namespace TennisApp.ViewModels
             if (player == null)
             {
                 Debug.Write("Kies een speler");
-                return;
             }
 
             var p = new NavigationParameters();
