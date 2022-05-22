@@ -64,6 +64,7 @@
                     </CollectionView.ItemTemplate>
                 </CollectionView>
             </RefreshView>
+            <Button WidthRequest="54" Text="Maak Toernooi" BackgroundColor="LightGreen" Command="{Binding MakeToernooiCommand}"/>
             <Button WidthRequest="54" Text="Terug" BackgroundColor="LightGreen" Command="{Binding TerugPageCommand}"/>
         </StackLayout>
     </ContentPage.Content>

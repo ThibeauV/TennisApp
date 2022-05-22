@@ -73,6 +73,7 @@ namespace TennisApp.ViewModels
             if (player == null)
             {
                 Debug.Write("Kies een speler");
+                return;
             }
 
             var p = new NavigationParameters();
@@ -95,7 +96,7 @@ namespace TennisApp.ViewModels
             try
             {
                 Players.Clear();
-
+                
                 var players = await dataRepositories.GetPlayersAsync();
 
                 foreach (var player in players)

@@ -13,5 +13,9 @@ namespace TennisApp.Repositories
         Task<bool> AddPlayersAsync(Player player);
 
         Task<bool> UpdateItemAsync(Player player);
+
+        Task<bool> DeleteItemAsync(Player player);
+
+        Task<int> GetPlayerCount();
     }
 }

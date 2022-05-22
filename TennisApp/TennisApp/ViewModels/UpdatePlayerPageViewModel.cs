@@ -1,4 +1,5 @@
 ﻿using Prism.Commands;
+using Prism.Common;
 using Prism.Mvvm;
 using Prism.Navigation;
 using System;
@@ -19,13 +20,15 @@ namespace TennisApp.ViewModels
         public UpdatePlayerPageViewModel(INavigationService navigationService, IDataRepositories<Player> dataRepositories)
             : base(navigationService)
         {
+            this.dataRepositories = dataRepositories;
+
             Title = "Update Player";
 
-            UpdateCommand = new DelegateCommand(OnSave, ValidateSave).ObservesProperty(() => age).ObservesProperty(() => name).ObservesProperty(() => familiename);
+            UpdateCommand = new DelegateCommand(OnSave);//.ObservesProperty(() => age).ObservesProperty(() => name).ObservesProperty(() => familiename);
 
             CancelCommand = new DelegateCommand(CancelPlayer);
 
-            this.dataRepositories = dataRepositories;
+            DeleteCommand = new DelegateCommand(DeletePlayer);
         }
 
         private string name;
@@ -54,6 +57,7 @@ namespace TennisApp.ViewModels
 
         public ICommand UpdateCommand { get; private set; }
         public ICommand CancelCommand { get; private set; }
+        public ICommand DeleteCommand { get; private set; }
 
         private async void OnSave()
         {
@@ -82,6 +86,23 @@ namespace TennisApp.ViewModels
             bool test = !string.IsNullOrWhiteSpace(Convert.ToString(age))
                 && !string.IsNullOrWhiteSpace(name) && !string.IsNullOrWhiteSpace(familiename);
             return test;
+        }
+
+        public override void OnNavigatedTo(INavigationParameters parameters)
+        {
+            if (parameters.ContainsKey("player"))
+            {
+                player = parameters.GetValue<Player>("player");
+                Name = player.Firstname;
+                Familiename = player.Lastname;
+                Age = player.Age;
+            }
+        }
+
+        public async void DeletePlayer()
+        {
+            dataRepositories.DeleteItemAsync(player);
+            await NavigationService.GoBackAsync();
         }
     }
 }

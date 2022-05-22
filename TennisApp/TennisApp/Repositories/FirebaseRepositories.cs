@@ -25,7 +25,11 @@ namespace TennisApp.Repositories
         {
             try
             {
-                var AddPlayer = await _query.PostAsync(player);
+                var firebaseObjects = await _query.OnceAsync<Player>();
+                player.PlayerId = 1 + firebaseObjects.Count();
+                await _query
+                    .Child("-" + Convert.ToString(player.PlayerId))
+                    .PutAsync(player);
             }
             catch
             {
@@ -64,7 +68,7 @@ namespace TennisApp.Repositories
             {
                 Player copy = new Player() { Age = player.Age, Firstname = player.Firstname, Lastname = player.Lastname, PlayerId = player.PlayerId };
                 await _query
-                    .Child(player.Firstname)
+                    .Child("-" + Convert.ToString(player.PlayerId))
                     .PutAsync(copy);
             }
             catch (Exception ex)
@@ -73,6 +77,38 @@ namespace TennisApp.Repositories
             }
 
             return true;
+        }
+
+        public async Task<bool> DeleteItemAsync(Player player)
+        {
+            try
+            {
+                await _query
+                    .Child("-" + player.PlayerId)
+                    .DeleteAsync();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public async Task<int> GetPlayerCount()
+        {
+            try
+            {
+                var firebaseObjects = await _query.OnceAsync<Player>();
+
+                int count = firebaseObjects.Count();
+
+                return count;
+            }
+            catch (Exception x)
+            {
+                Debug.WriteLine(x);
+                return 0;
+            }
         }
     }
 }
